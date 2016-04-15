@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="DSR_URA" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dr_num">
+    <cd:Integer>
+      <cd:Description>Data record number, starting with 1</cd:Description>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="utc_mid_sp">
+    <cd:Time format="ascii" timeformat="ascii_gome_datetime">
+      <cd:Description>UTC time at middle of the source packet </cd:Description>
+      <cd:Mapping string="                        " value="nan"/>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="lat">
+    <cd:Integer>
+      <cd:Description>Geodetic latitude (negative: South latitude; positive: North latitude)</cd:Description>
+      <cd:Unit>1e-3 degrees_north</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>degrees_north</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="lon">
+    <cd:Integer>
+      <cd:Description>East longitude (0--360 deg from Greenwich to East)</cd:Description>
+      <cd:Unit>1e-3 degrees_east</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>degrees_east</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="avg_wind_speed">
+    <cd:Integer>
+      <cd:Description>Average wind speed</cd:Description>
+      <cd:Unit>1e-2 m/s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m/s</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="std_wind_speed">
+    <cd:Integer>
+      <cd:Description>Standard deviation of wind speed</cd:Description>
+      <cd:Unit>1e-4 m/s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="10000.000000">
+        <cd:Unit>m/s</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="avg_swh">
+    <cd:Integer>
+      <cd:Description>Average significant wave height</cd:Description>
+      <cd:Unit>1e-2 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="std_swh">
+    <cd:Integer>
+      <cd:Description>Standard deviation of significant wave height</cd:Description>
+      <cd:Unit>1e-2 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="avg_alt">
+    <cd:Integer>
+      <cd:Description>Average altitude (corrected)</cd:Description>
+      <cd:Unit>1e-2 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="std_alt">
+    <cd:Integer>
+      <cd:Description>Standard deviation of altitude</cd:Description>
+      <cd:Unit>1e-4 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="10000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n_block_avg">
+    <cd:Integer>
+      <cd:Description>Number of blocks used for averaging</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pcd">
+    <cd:Record>
+      <cd:Description>Product confidence data</cd:Description>
+      <cd:Field name="enough_meas">
+        <cd:Integer>
+          <cd:Description>Enough measurements (0 = enough measurements to process data; 1 = not enough measurements to process data)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="htl_time_corr">
+        <cd:Integer>
+          <cd:Description>HTL time content correction (0 = correction performed; 1 = correction not performed)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="frame_chksum_flag">
+        <cd:Integer>
+          <cd:Description>Frame checksum flag (0 = checksum correct; 1 = checksum error detected)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="mean_peak_limit">
+        <cd:Integer>
+          <cd:Description>Mean peakiness limit (0 = mean peakiness within MMCC/EECF supplied limits; 1 = mean peakiness outside limits)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="std_alt_limit">
+        <cd:Integer>
+          <cd:Description>Standard deviation altitude limit (0 = standard deviation within MMCC/EECF supplied limits; 1 = standard deviation outside limits)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="std_swh_limit">
+        <cd:Integer>
+          <cd:Description>Standard deviation SWH limit (0 = standard deviation within MMCC/EECF supplied limits; 1 = standard deviation outside limits)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="std_wind_speed">
+        <cd:Integer>
+          <cd:Description>Standard deviation wind speed limit (0 = standard deviation within MMCC/EECF supplied limits; 1 = standard deviation outside limits)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="pc_summary">
+        <cd:Integer>
+          <cd:Description>Summary PC factor (0 = processing according to specification; 1 = at least one of the following bits is set)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="avg_peaki">
+    <cd:Integer>
+      <cd:Description>Average peakiness</cd:Description>
+      <cd:Unit>1e-2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>1</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="avg_sigma0">
+    <cd:Integer>
+      <cd:Description>Averaged sigma_0</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="int_electr_dens">
+    <cd:Integer>
+      <cd:Description>Integrated electron density</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="olc_status">
+    <cd:Record>
+      <cd:Description>Open loop calibration status</cd:Description>
+      <cd:Field name="spare_1">
+        <cd:Integer>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="div_by_zero">
+        <cd:Integer>
+          <cd:Description>Division by zero flag (0 = no division by zero; 1 = division by zero occurred during processing)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="int_arithm_flag">
+        <cd:Integer>
+          <cd:Description>Integer arithmetic overflow flag (0 = no overflow; 1 = integer arithmetic overflow occurred during processing)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="real_arithm_flag">
+        <cd:Integer>
+          <cd:Description>Real arithmetic overflow or underflow flag (0 = no overflow/underflow; 1 = real arithmetic overflow or underflow occurred during processing)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="spare_2">
+        <cd:Integer>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="agc_output_corr">
+        <cd:Integer>
+          <cd:Description>AGC output correction (0 = from open loop calibration; 1 = default)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="spare_3">
+        <cd:Integer>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="height_err_corr">
+        <cd:Integer>
+          <cd:Description>Height error correction (0 = from open loop calibration; 1 = default)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="mode">
+    <cd:Record>
+      <cd:Field name="trk_ocean">
+        <cd:Integer>
+          <cd:Description>Tracking on ocean</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="trk_ice">
+        <cd:Integer>
+          <cd:Description>Tracking on ice</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="acq_ocean">
+        <cd:Integer>
+          <cd:Description>Acquisition on ocean</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="acq_ice">
+        <cd:Integer>
+          <cd:Description>Acquisition on ice</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="bite">
+        <cd:Integer>
+          <cd:Description>BITE</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="cal_closed_loop">
+        <cd:Integer>
+          <cd:Description>Calibration (closed loop)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="test">
+        <cd:Integer>
+          <cd:Description>Test</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="blank">
+        <cd:Integer>
+          <cd:Description>Blank data record</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="spare_4">
+    <cd:Raw>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="alt_cor_ion">
+    <cd:Integer>
+      <cd:Description>Altitude correction, ionosphere</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alt_cor_wet">
+    <cd:Integer>
+      <cd:Description>Altitude correction, wet troposphere</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alt_cor_dry">
+    <cd:Integer>
+      <cd:Description>Altitude correction, dry troposphere</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alt_cor_cal">
+    <cd:Integer>
+      <cd:Description>Altitude correction, calibration constant</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="htl_cal_cor">
+    <cd:Integer>
+      <cd:Description>Smoothed open loop HTL calibration correction</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_cal_cor">
+    <cd:Integer>
+      <cd:Description>Smoothed open loop AGC calibration correction</cd:Description>
+      <cd:Unit>1e-3 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

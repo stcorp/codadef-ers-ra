@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<ct:Tests last-modified="2010-04-26" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <ct:Test name="OriginatorValid" criticality="Error" description="Originator must be `I', `M', `J', or `K'"><![CDATA[str(.) == "I" || str(.) == "M" || str(.) == "J" || str(.) == "K"]]></ct:Test>
+  <ct:Test name="ProductTypeIsUra" criticality="Error" description="Product type must be equal to 9 for URA"><![CDATA[int(.) == 9]]></ct:Test>
+  <ct:Test name="ProductTypeIsErac" criticality="Error" description="Product type must be equal to 15 for ERAC"><![CDATA[int(.) == 15]]></ct:Test>
+  <ct:Test name="SpacecraftIsErs2" criticality="Error" description="Spacecraft must be 2 for ERS-2"><![CDATA[int(.) == 2]]></ct:Test>
+  <ct:Test name="BeginningOfProductUtcValid" criticality="Error" description="Time at beginning of product must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="ProcessingStationValid" criticality="Error" description="Station ID where data was processed must be in the range [1, 15]"><![CDATA[int(.) >= 1 && int(.) <= 15]]></ct:Test>
+  <ct:Test name="PcdSummaryFlag" criticality="Warning" description="When PCD summary flag is not set to 0, some error occurred during processing"><![CDATA[int(.) & 1 == 0]]></ct:Test>
+  <ct:Test name="GenerationTimeValid" criticality="Error" description="Time when product was generated must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="SphSizeUraValid" criticality="Error" description="SPH size for URA product must be 56"><![CDATA[int(.) == 56]]></ct:Test>
+  <ct:Test name="NumDsrUraValid" criticality="Error" description="Number of data set records for URA product must be 77"><![CDATA[int(.) == 77]]></ct:Test>
+  <ct:Test name="DsrSizeUraValid" criticality="Error" description="Size of data set record for URA product must be 88"><![CDATA[int(.) == 88]]></ct:Test>
+  <ct:Test name="SphSizeEracValid" criticality="Error" description="SPH size for ERAC product must be 282"><![CDATA[int(.) == 282]]></ct:Test>
+  <ct:Test name="NumDsrEracValid" criticality="Error" description="Number of data set records for ERAC product must be 1"><![CDATA[int(.) == 1]]></ct:Test>
+  <ct:Test name="DsrSizeEracValid" criticality="Error" description="Size of data set record for ERAC product must be 3136"><![CDATA[int(.) == 3136]]></ct:Test>
+  <ct:Test name="SubsystemValid" criticality="Error" description="Subsystem that generated product must be in the range [0, 4]"><![CDATA[int(.) >= 0 && int(.) <= 4]]></ct:Test>
+  <ct:Test name="ObrcFlagValid" criticality="Error" description="OBRC flag must be in the range [0, 2]"><![CDATA[int(.) >= 0 && int(.) <= 2]]></ct:Test>
+  <ct:Test name="RefUtcValid" criticality="Error" description="Reference UTC time must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="ClockStepValid" criticality="Error" description="Step length of satellite clock must be larger than 0"><![CDATA[int(.) >= 0]]></ct:Test>
+  <ct:Test name="AscUtcValid" criticality="Error" description="UTC time of ascending node state vector must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="ProcessingEquipmentStatusWarning" criticality="Warning" description="When equipment status flag is not set to 0 there were some problems"><![CDATA[int(.) == 0 || int(.) == 2]]></ct:Test>
+  <ct:Test name="ProcessingEquipmentStatusError" criticality="Error" description="When equipment status flag is not set to 0 or 1 there were serious problems"><![CDATA[int(.) <= 1]]></ct:Test>
+  <ct:Test name="IsOceanMode" criticality="Error" description="Product type must be 0 for ocean mode, otherwise it is a non-ocean of blank product"><![CDATA[int(.) == 0]]></ct:Test>
+  <ct:Test name="DataCorruptionCheck" criticality="Error" description="When corrupt data flag is non-zero, some data is corrupted"><![CDATA[int(.) == 0]]></ct:Test>
+  <ct:Test name="ArithmeticCheck" criticality="Error" description="When arithmetic flag is non-zero, an arithmetic exception was raised during processing"><![CDATA[int(.) == 0]]></ct:Test>
+  <ct:Test name="LatitudeValid" criticality="Error" description="Latitude must be between -90 and 90 degrees"><![CDATA[int(.) >= -90000 && int(.) <= 90000]]></ct:Test>
+  <ct:Test name="LongitudeValid" criticality="Error" description="Longitude must be between 0 and 360 degrees"><![CDATA[int(.) >= 0 && int(.) <= 360000]]></ct:Test>
+  <ct:Test name="PacketIdValid" criticality="Error" description="LSB of packet ID must not contain all 1"><![CDATA[(int(.) & 127) != 127]]></ct:Test>
+</ct:Tests>

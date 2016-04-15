@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SPH_URA" last-modified="2010-08-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <cd:Field name="pcd">
+    <cd:Record>
+      <cd:Description>Product confidence data</cd:Description>
+      <cd:Field name="proc_eq_status">
+        <cd:Integer>
+          <cd:Description>Processing equipment status (0 = equipment working; 1 = some problems; 2 = equipment failed during product generation)</cd:Description>
+          <cd:BitSize>2</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+        <ct:NamedTest id="ProcessingEquipmentStatusError" />
+        <ct:NamedTest id="ProcessingEquipmentStatusWarning" />
+      </cd:Field>
+      <cd:Field name="prod_type">
+        <cd:Integer>
+          <cd:Description>Product type (0 = ocean mode; 1 = non-ocean mode or blank product)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+        <ct:NamedTest id="IsOceanMode" />
+      </cd:Field>
+      <cd:Field name="corrupt_data">
+        <cd:Integer>
+          <cd:Description>Corrupt data (0 = all processing nominal; 1 = details of data corruption in DSR)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+        <ct:NamedTest id="DataCorruptionCheck" />
+      </cd:Field>
+      <cd:Field name="arith_flag">
+        <cd:Integer>
+          <cd:Description>Arithmetic flag (0 = no arithmetic fault; 1 = at least one DSR has a flag raised in byte 62)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+        <ct:NamedTest id="ArithmeticCheck" />
+      </cd:Field>
+      <cd:Field name="spare_1">
+        <cd:Raw>
+          <cd:BitSize>11</cd:BitSize>
+        </cd:Raw>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="lat_dsr_1">
+    <cd:Integer>
+      <cd:Description>Geodetic latitude of data set record 1 (negative: South latitude; positive: North latitude)</cd:Description>
+      <cd:Unit>1e-3 degrees_north</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <ct:NamedTest id="LatitudeValid" />
+  </cd:Field>
+  <cd:Field name="long_dsr_1">
+    <cd:Integer>
+      <cd:Description>East longitude of data set record 1 (0--360 deg from Greenwich to East)</cd:Description>
+      <cd:Unit>1e-3 degrees_east</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <ct:NamedTest id="LongitudeValid" />
+  </cd:Field>
+  <cd:Field name="track_heading">
+    <cd:Integer>
+      <cd:Description>Subsatellite Track Heading at data set record 1</cd:Description>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="uso_offset">
+    <cd:Integer>
+      <cd:Description>USO offset frequency with respect to 5 MHz</cd:Description>
+      <cd:Unit>1e-3 Hz</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="glob_thresh_tab_id">
+    <cd:Integer>
+      <cd:Description>Global threshold parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="static_params_tab_id">
+    <cd:Integer>
+      <cd:Description>Static params parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="dynamic_params_tab_id">
+    <cd:Integer>
+      <cd:Description>Dynamic params parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tau_ref_g_tab_id">
+    <cd:Integer>
+      <cd:Description>tau_ref_G parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tab_tau1_tab_id">
+    <cd:Integer>
+      <cd:Description>TAB_tau1 parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tab_tau2_tab_id">
+    <cd:Integer>
+      <cd:Description>TAB_tau2 parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_3">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="sigma_s_ref_g_tab_id">
+    <cd:Integer>
+      <cd:Description>sigma_s_ref_G parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tab_s_tab_id">
+    <cd:Integer>
+      <cd:Description>TAB_s parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_4">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="a_ref_g_tab_id">
+    <cd:Integer>
+      <cd:Description>Global threshold parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_5">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="tab_a2_tab_id">
+    <cd:Integer>
+      <cd:Description>TAB_a2 parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tab_loc_tab_id">
+    <cd:Integer>
+      <cd:Description>TAB_loc parameter table ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_6">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="press_tab_id_83">
+    <cd:Integer>
+      <cd:Description>Pressure table ID (table type 83, forecast F18)</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="press_tab_id_84">
+    <cd:Integer>
+      <cd:Description>Pressure table ID (table type 84, forecast F24)</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="press_tab_id_85">
+    <cd:Integer>
+      <cd:Description>Pressure table ID (table type 85, forecast F24)</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="press_tab_id_86">
+    <cd:Integer>
+      <cd:Description>Pressure table ID (table type 86, forecast F36)</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

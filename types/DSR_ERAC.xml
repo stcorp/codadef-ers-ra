@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="DSR_ERAC" last-modified="2010-04-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <cd:Field name="dr_num">
+    <cd:Integer>
+      <cd:Description>Data record number (always 1)</cd:Description>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="packet_id">
+    <cd:Integer>
+      <cd:Description>Packet ID</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+    <ct:NamedTest id="PacketIdValid" />
+  </cd:Field>
+  <cd:Field name="packet_seq_count">
+    <cd:Integer>
+      <cd:Description>Packet sequence counter</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="packet_len">
+    <cd:Integer>
+      <cd:Description>Packet length in bytes</cd:Description>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sc_time_code">
+    <cd:Integer>
+      <cd:Description>SC time code</cd:Description>
+      <cd:NativeType>uint64</cd:NativeType>
+      <cd:BitSize>40</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="data_subset_count">
+    <cd:Integer>
+      <cd:Description>Data subset counter</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_htl_man">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_htl_exp">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_htl_man">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_htl_exp">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_stl_man">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_stl_exp">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_stl_man">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_stl_exp">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_agc_man">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_agc_exp">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_agc_man">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_agc_exp">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pw_ref">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:BitSize>48</cd:BitSize>
+    </cd:Raw>
+  </cd:Field>
+  <cd:Field name="pres_tra_dur">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="time_del_pres">
+    <cd:Integer>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="der_tim_del_pre">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_pres">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="stl_pres">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rx_off">
+    <cd:Integer>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Raw>
+      <cd:BitSize>272</cd:BitSize>
+    </cd:Raw>
+  </cd:Field>
+  <cd:Field name="data_block">
+    <cd:Array>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="mode_stat_id">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="noise_floor">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="htl_disc_out">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="stl_disc_out_man">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="stl_disc_out_exp">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="agc_disc_out">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="htl_beta_br_ls">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="htl_beta_br_ms">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="fft">
+          <cd:Array>
+            <cd:Dimension>64</cd:Dimension>
+            <cd:Integer>
+              <cd:NativeType>int16</cd:NativeType>
+              <cd:BitSize>16</cd:BitSize>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="rx_coarse">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="rx_fine">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="slope">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="agc">
+          <cd:Integer>
+            <cd:NativeType>int16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

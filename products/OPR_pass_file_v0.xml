@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="OPR_pass_file_v0" format="binary" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="header">
+      <cd:NamedType id="OPR_pass_file_header"/>
+    </cd:Field>
+    <cd:Field name="data">
+      <cd:Array>
+        <cd:Dimension><![CDATA[$num_records]]></cd:Dimension>
+        <cd:NamedType id="OPR_pass_file_data_record"/>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+  <cd:ProductVariable name="num_records">
+    <cd:Init><![CDATA[$num_records = int(:/header/Pass_Nbmes)]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>

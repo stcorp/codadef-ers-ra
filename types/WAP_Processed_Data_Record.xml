@@ -1,0 +1,2112 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="WAP_Processed_Data_Record" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:BitSize><![CDATA[8 * int(./Length)]]></cd:BitSize>
+  <cd:Field name="Record_Sequence_Number">
+    <cd:Integer>
+      <cd:Description>Record Sequence Number</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="File_Code">
+    <cd:Integer>
+      <cd:Description>File Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Record_Code">
+    <cd:Integer>
+      <cd:Description>Record Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Mission_Code">
+    <cd:Integer>
+      <cd:Description>Mission Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Origin_Code">
+    <cd:Integer>
+      <cd:Description>Origin Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Length">
+    <cd:Integer>
+      <cd:Description>Length of this record (depends on product)</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Reserved_1">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:FixedValue>    </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Reserved_2">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:FixedValue>    </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Source_packet_No">
+    <cd:Integer>
+      <cd:Description>Source package No within product (1-n)</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Orbit_Number">
+    <cd:Integer>
+      <cd:Description>Orbit Number</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Source_Packet_UTC">
+    <cd:Record>
+      <cd:Field name="days">
+        <cd:Integer>
+          <cd:Description>No of days MJD (days since 1 Jan 1950)</cd:Description>
+          <cd:Unit>days since 1950-01-01</cd:Unit>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="milliseconds">
+        <cd:Integer>
+          <cd:Description>milliseconds of day</cd:Description>
+          <cd:Unit>1e-3 s</cd:Unit>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="microseconds">
+        <cd:Integer>
+          <cd:Description>microseconds</cd:Description>
+          <cd:Unit>1e-6 s</cd:Unit>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Packet_ID">
+    <cd:Integer>
+      <cd:Description>Packet ID (status identifier)</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Packet_Sequence_Control">
+    <cd:Integer>
+      <cd:Description>Packet Sequence Control</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Packet_Length">
+    <cd:Integer>
+      <cd:Description>Packet Length</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="SC_Binary_Counter">
+    <cd:Integer>
+      <cd:Description>S/C Binary Counter</cd:Description>
+      <cd:NativeType>uint64</cd:NativeType>
+      <cd:BitSize>40</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Data_Subset_Counter">
+    <cd:Integer>
+      <cd:Description>Data Subset Counter</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="a_HTL_Filter">
+    <cd:Integer>
+      <cd:Description>alpha HTL Filter coefficient</cd:Description>
+      <cd:Unit>1E-10</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="b_HTL_Filter">
+    <cd:Integer>
+      <cd:Description>beta HTL Filter coefficient</cd:Description>
+      <cd:Unit>1E-10</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="a_STL_Filter">
+    <cd:Integer>
+      <cd:Description>alpha STL Filter coefficient</cd:Description>
+      <cd:Unit>1E-8</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="b_STL_Filter">
+    <cd:Integer>
+      <cd:Description>beta STL Filter coefficient</cd:Description>
+      <cd:Unit>1E-10</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="a_AGC_Filter">
+    <cd:Integer>
+      <cd:Description>alpha AGC Filter coefficient</cd:Description>
+      <cd:Unit>1E-8</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="b_AGC_Filter">
+    <cd:Integer>
+      <cd:Description>beta AGC Filter coefficient</cd:Description>
+      <cd:Unit>1E-10</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Power_Reference_Value">
+    <cd:Integer>
+      <cd:Description>Power Reference Value</cd:Description>
+      <cd:Unit>1E-2</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spares_1">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>48</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Preset_Duration">
+    <cd:Integer>
+      <cd:Description>Preset Duration</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Preset_Time_Delay">
+    <cd:Integer>
+      <cd:Description>Preset Time Delay</cd:Description>
+      <cd:Unit>1E-3 12.5ns</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Preset_First_Derivative_of_Time_Delay">
+    <cd:Integer>
+      <cd:Description>Preset First Derivative of Time Delay</cd:Description>
+      <cd:Unit>1E-6 12.5ns</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Preset_AGC">
+    <cd:Integer>
+      <cd:Description>Preset AGC</cd:Description>
+      <cd:Unit>1E-2 dB</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Preset_Slope">
+    <cd:Integer>
+      <cd:Description>Preset AGC</cd:Description>
+      <cd:Unit>1E-2</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="RX_Offset">
+    <cd:Integer>
+      <cd:Description>RX Offset</cd:Description>
+      <cd:Unit>1E-3 12.5ns</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spares_2">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>272</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="science_block">
+    <cd:Array>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="Mode_ID">
+          <cd:Integer>
+            <cd:Description>Mode ID</cd:Description>
+            <cd:NativeType>uint16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Noise_Floor_Estimation">
+          <cd:Integer>
+            <cd:Description>Noise Floor Estimation</cd:Description>
+            <cd:Unit>1E-2</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="HTL_Discriminator_op">
+          <cd:Integer>
+            <cd:Description>HTL Discriminator o/p (ocean/ice)</cd:Description>
+            <cd:Unit>1E-5 12.5ns</cd:Unit>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="STL_Discriminator_op">
+          <cd:Integer>
+            <cd:Description>STL Discriminator o/p</cd:Description>
+            <cd:Unit>1E-2</cd:Unit>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="AGC_Discriminator_op">
+          <cd:Integer>
+            <cd:Description>AGC Discriminator o/p</cd:Description>
+            <cd:Unit>1E-1</cd:Unit>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="HTL_Beta_Branch">
+          <cd:Integer>
+            <cd:Description>HTL Beta Branch</cd:Description>
+            <cd:Unit>1E-6</cd:Unit>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Waveform_Samples">
+          <cd:Array>
+            <cd:Description>64 waveform Samples</cd:Description>
+            <cd:Dimension>64</cd:Dimension>
+            <cd:Integer>
+              <cd:NativeType>uint16</cd:NativeType>
+              <cd:BitSize>16</cd:BitSize>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="Time_Delay">
+          <cd:Integer>
+            <cd:Description>Time Delay</cd:Description>
+            <cd:Unit>1E-3 12.5ns</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Slope">
+          <cd:Integer>
+            <cd:Description>Slope</cd:Description>
+            <cd:Unit>1E-2</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="AGC">
+          <cd:Integer>
+            <cd:Description>AGC</cd:Description>
+            <cd:Unit>1E-2 dB</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="PCD">
+    <cd:Record>
+      <cd:Field name="Acquisition_PCD">
+        <cd:Integer>
+          <cd:Description>Acquisition PCD</cd:Description>
+          <cd:NativeType>uint16</cd:NativeType>
+          <cd:BitSize>16</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Ingestion_PCD">
+        <cd:Integer>
+          <cd:Description>Ingestion PCD</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>8</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="FS_Parity_flag">
+        <cd:Integer>
+          <cd:Description>FS Parity flag</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Frame_checksum_flag">
+        <cd:Integer>
+          <cd:Description>Frame checksum flag. 0=OK, 1=Checksum error</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Frame_lock">
+        <cd:Integer>
+          <cd:Description>Frame lock</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>5</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Science_block_valid">
+    <cd:Array>
+      <cd:Description>Science block valid</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>Valid=1, invalid=0</cd:Description>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>1</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Science_block_valid_padding">
+    <cd:Raw>
+      <cd:Description>Unused bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Spares_3">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Data_degraded">
+    <cd:Array>
+      <cd:Description>Data degraded</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>not degraded=0, degraded=1</cd:Description>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>1</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Data_degraded_padding">
+    <cd:Raw>
+      <cd:Description>Unused bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Auxiliary_Data_Limit_Flags">
+    <cd:Record>
+      <cd:Field name="Packet_checksum">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="alpha_HTL_filter_coefficient">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="beta_HTL_filter_coefficient">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="alpha_STL_filter_coefficient">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="beta_STL_filter_coefficient">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="alpha_AGC_filter_coefficient">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="beta_AGC_filter_coefficient">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Power_reference_value">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Preset_tracking_duration">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Preset_time_delay">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Preset_first_derivatite_of_time_delay">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Preset_AGC">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Preset_slope">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="RX_offset">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: out of valid range</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>2</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Ocean_Ice_mode_flags">
+    <cd:Array>
+      <cd:Description>Ocean/Ice mode flags</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>Ocean mode=1, Ice mode=0</cd:Description>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>1</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Ocean_Ice_mode_flags_padding">
+    <cd:Raw>
+      <cd:Description>Unused bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="waveform_data">
+    <cd:Array>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="Frame_number">
+          <cd:Integer>
+            <cd:Description>Frame number</cd:Description>
+            <cd:NativeType>uint16</cd:NativeType>
+            <cd:BitSize>16</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Range">
+          <cd:Integer>
+            <cd:Description>range</cd:Description>
+            <cd:Unit>mm</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Hs">
+          <cd:Integer>
+            <cd:Description>Hs</cd:Description>
+            <cd:Unit>mm</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Sigma0">
+          <cd:Integer>
+            <cd:Description>Sigma0</cd:Description>
+            <cd:Unit>1E-2 dB</cd:Unit>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Waveform_amplitude">
+          <cd:Integer>
+            <cd:Description>Waveform amplitude</cd:Description>
+            <cd:Unit>1E-2</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Waveform_width">
+          <cd:Integer>
+            <cd:Description>Waveform width</cd:Description>
+            <cd:Unit>mm</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Low_retrack_point">
+          <cd:Integer>
+            <cd:Description>Low retrack point</cd:Description>
+            <cd:Unit>1E-2</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Medium_retrack_point">
+          <cd:Integer>
+            <cd:Description>Medium retrack point</cd:Description>
+            <cd:Unit>1E-2</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="High_retrack_point">
+          <cd:Integer>
+            <cd:Description>High retrack point</cd:Description>
+            <cd:Unit>1E-2</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Waveform_peakiness">
+          <cd:Integer>
+            <cd:Description>Waveform peakiness</cd:Description>
+            <cd:Unit>1E-4</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Waveform_latitude">
+          <cd:Integer>
+            <cd:Description>Waveform latitude</cd:Description>
+            <cd:Unit>1E-6 degrees_north</cd:Unit>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+              <cd:Unit>degrees_north</cd:Unit>
+            </cd:Conversion>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Waveform_longitude">
+          <cd:Integer>
+            <cd:Description>Waveform longitude</cd:Description>
+            <cd:Unit>1E-6 degrees_east</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+              <cd:Unit>degrees_east</cd:Unit>
+            </cd:Conversion>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Altitude">
+          <cd:Integer>
+            <cd:Description>Altitude</cd:Description>
+            <cd:Unit>mm</cd:Unit>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:BitSize>32</cd:BitSize>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Range_error_flags">
+          <cd:Record>
+            <cd:Field name="Time_delay_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Range_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="HTL_discriminator_output_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="HTL_b_Branch_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Range_blunder">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Spare">
+              <cd:Integer>
+                <cd:Description>Spare</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>3</cd:BitSize>
+              </cd:Integer>
+              <cd:Hidden/>
+            </cd:Field>
+          </cd:Record>
+        </cd:Field>
+        <cd:Field name="HS_error_flags">
+          <cd:Record>
+            <cd:Field name="Slope_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Hs_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="STL_discriminator_output_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="HS_blunder">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Spare">
+              <cd:Integer>
+                <cd:Description>Spare</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>4</cd:BitSize>
+              </cd:Integer>
+              <cd:Hidden/>
+            </cd:Field>
+          </cd:Record>
+        </cd:Field>
+        <cd:Field name="Sigma0_error_flags">
+          <cd:Record>
+            <cd:Field name="AGC_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Sigma0_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="AGC_discriminator_output_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Sigma0_blunder">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Noise_floor_estimate">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Spare">
+              <cd:Integer>
+                <cd:Description>Spare</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>3</cd:BitSize>
+              </cd:Integer>
+              <cd:Hidden/>
+            </cd:Field>
+          </cd:Record>
+        </cd:Field>
+        <cd:Field name="Waveform_error_flags">
+          <cd:Record>
+            <cd:Field name="Waveform_samples_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Bin_Gains_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameters out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Waveform_sum_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Spare">
+              <cd:Integer>
+                <cd:Description>Spare</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>5</cd:BitSize>
+              </cd:Integer>
+              <cd:Hidden/>
+            </cd:Field>
+          </cd:Record>
+        </cd:Field>
+        <cd:Field name="Waveform_shape_flags">
+          <cd:Record>
+            <cd:Field name="Peakiness">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: non-ocean threshold exceeded</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Multi_peaked">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: waveform multipeaked</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Strange_shaped">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: waveform has strange shape</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Tracking_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: tracking point out of limits</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Spare">
+              <cd:Integer>
+                <cd:Description>Spare</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>4</cd:BitSize>
+              </cd:Integer>
+              <cd:Hidden/>
+            </cd:Field>
+          </cd:Record>
+        </cd:Field>
+        <cd:Field name="Location_error_flags">
+          <cd:Record>
+            <cd:Field name="Mispointing_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter in error</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Orbit_degraded">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter in error</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Waveform_UT_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter in error</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Latitude_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter in error</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Longitude_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter in error</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Altitude_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter in error</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Attitude_error">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: parameter in error</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+            <cd:Field name="Orbit_manoeuvre">
+              <cd:Integer>
+                <cd:Description>0: Ok, 1: orbit data degraded due to orbit manoeuvre</cd:Description>
+                <cd:NativeType>uint8</cd:NativeType>
+                <cd:BitSize>1</cd:BitSize>
+              </cd:Integer>
+            </cd:Field>
+          </cd:Record>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Range_Constant">
+    <cd:Integer>
+      <cd:Description>Range Constant</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Range_stddev">
+    <cd:Integer>
+      <cd:Description>Range std. dev., RSD</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Range_Gradient">
+    <cd:Integer>
+      <cd:Description>Range Gradient</cd:Description>
+      <cd:Unit>1E-2 ms-1</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spares_4">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Range_values_used">
+    <cd:Integer>
+      <cd:Description>Range values used, n</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Hs_mean">
+    <cd:Integer>
+      <cd:Description>Hs mean, Hmean</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Hs_values_used">
+    <cd:Integer>
+      <cd:Description>Hs values used, nh</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Hs_stddev">
+    <cd:Integer>
+      <cd:Description>Hs std. dev., HSD</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_mean">
+    <cd:Integer>
+      <cd:Description>Sigma0 mean, Smean</cd:Description>
+      <cd:Unit>1E-1 dB</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_stddev">
+    <cd:Integer>
+      <cd:Description>Sigma0 std. dev., SSD</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_values_used">
+    <cd:Integer>
+      <cd:Description>Sigma0 values used, ns</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Range_corrections_error_flags">
+    <cd:Record>
+      <cd:Field name="Internal_range_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="External_range_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Doppler_range_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Ionospheric_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Dry_tropo_range_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Wet_tropo_range_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare_1">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="Spare_2">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="Wet_tropo_range_corr_ATSR_M_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Wet_tropo_range_corr_SSM_I_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Wet_tropo_range_corr_Rad_Snd_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Liquid_water_range_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare_3">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>4</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Hs_correction_error_flags">
+    <cd:Record>
+      <cd:Field name="Internal_slope_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="External_slope_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>6</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Sigma0_correction_error_flags">
+    <cd:Record>
+      <cd:Field name="AGC_Internal_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Sigma0_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Range_so_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Liquid_water_attenuation_correction_error">
+        <cd:Integer>
+          <cd:Description>0: OK, 1: parameter out of limits</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>4</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Mispointing">
+    <cd:Integer>
+      <cd:Description>Mispointing</cd:Description>
+      <cd:Unit>1E-6 degrees</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spares_5">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>96</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Yaw">
+    <cd:Integer>
+      <cd:Description>Yaw</cd:Description>
+      <cd:Unit>1E-6 degrees</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Roll">
+    <cd:Integer>
+      <cd:Description>Roll</cd:Description>
+      <cd:Unit>1E-6 degrees</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Pitch">
+    <cd:Integer>
+      <cd:Description>Pitch</cd:Description>
+      <cd:Unit>1E-6 degrees</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Radial_Orbit_Correction">
+    <cd:Integer>
+      <cd:Description>Radial Orbit Correction (corresponding to the Source Packet Centre UTC)</cd:Description>
+      <cd:Unit>1E-1 mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spares_6">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>64</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Internal_Range_Correction">
+    <cd:Integer>
+      <cd:Description>Internal Range Correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="External_Range_Correction">
+    <cd:Integer>
+      <cd:Description>External Range Correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Pulse_Repitition_Period">
+    <cd:Integer>
+      <cd:Description>Pulse Repitition Period</cd:Description>
+      <cd:Unit>1E-8 Hz</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Internal_Slope_Correction">
+    <cd:Integer>
+      <cd:Description>Internal Slope Correction</cd:Description>
+      <cd:Unit>1E-2</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="External_Hs_Correction">
+    <cd:Integer>
+      <cd:Description>External Hs Correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="AGC_Correction">
+    <cd:Integer>
+      <cd:Description>AGC Correction</cd:Description>
+      <cd:Unit>1E-2 dB</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_Correction">
+    <cd:Integer>
+      <cd:Description>Sigma0 Correction</cd:Description>
+      <cd:Unit>1E-2 dB</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Bin_Gain_Corrections">
+    <cd:Array>
+      <cd:Description>64 Bin Gain Corrections</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1E-3</cd:Unit>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:BitSize>32</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Doppler_Range_Correction">
+    <cd:Integer>
+      <cd:Description>Doppler Range Correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Range_Sigma0_Correction">
+    <cd:Integer>
+      <cd:Description>Range Sigma0 Correction</cd:Description>
+      <cd:Unit>1E-2 dB</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Ionospheric_Delay_Correction">
+    <cd:Integer>
+      <cd:Description>Ionospheric Delay Correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="PRARE_Data_Correction">
+    <cd:Integer>
+      <cd:Description>PRARE Data Correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Electron_Content">
+    <cd:Integer>
+      <cd:Description>Electron Content</cd:Description>
+      <cd:Unit>1E-17 m-2</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Dry_tropo_range_correction">
+    <cd:Integer>
+      <cd:Description>Dry tropo range correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Surface_pressure">
+    <cd:Integer>
+      <cd:Description>Surface pressure</cd:Description>
+      <cd:Unit>1E-1 mbars</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wet_tropospheric_range_correction">
+    <cd:Integer>
+      <cd:Description>Wet tropospheric range correction [GFA]</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Surface_air_temperature">
+    <cd:Integer>
+      <cd:Description>Surface air temperature T0</cd:Description>
+      <cd:Unit>1E-1 K</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Total_integrated_water_vapour">
+    <cd:Integer>
+      <cd:Description>Total integrated water vapour, Q [GFA]</cd:Description>
+      <cd:Unit>1E-1 kg m-2</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wet_troposhperic_range_correction_ATSR_M">
+    <cd:Integer>
+      <cd:Description>Wet tropospheric range correction. [ATSR-M]</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wet_troposhperic_range_correction_SSM_I">
+    <cd:Integer>
+      <cd:Description>Wet tropospheric range correction. [SSM/I]</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wet_troposhperic_range_correction_Rad_Snd">
+    <cd:Integer>
+      <cd:Description>Wet tropospheric range correction. [Rad Snd]</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Integral_of_function">
+    <cd:Integer>
+      <cd:Description>Integral of function rw(h)/T(h)</cd:Description>
+      <cd:Unit>1E-3 kg m-2 K-1</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Total_integrated_water_vapour_ATSR_M">
+    <cd:Integer>
+      <cd:Description>Total integrated water vapour, Q [ATSR-M]</cd:Description>
+      <cd:Unit>1E-1 kg m-2</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Total_integrated_water_vapour_SSM_I">
+    <cd:Integer>
+      <cd:Description>Total integrated water vapour, Q [SSM/I]</cd:Description>
+      <cd:Unit>1E-1 kg m-2</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Total_integrated_water_vapour_Rad_Snd">
+    <cd:Integer>
+      <cd:Description>Total integrated water vapour, Q [Rad Snd]</cd:Description>
+      <cd:Unit>1E-1 kg m-2</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Liquid_water_range_correction">
+    <cd:Integer>
+      <cd:Description>Liquid water range correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Liquid_water_attenuation_correction">
+    <cd:Integer>
+      <cd:Description>Liquid water attenuation correction</cd:Description>
+      <cd:Unit>1E-6 dB</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Total_liquid_water">
+    <cd:Integer>
+      <cd:Description>Total liquid water, L</cd:Description>
+      <cd:Unit>1E-3 kg m-2</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Atmos_Corrections_Status">
+    <cd:Record>
+      <cd:Field name="ATSR_M_range_correction_present">
+        <cd:Integer>
+          <cd:Description>0: no correction, 1: correction present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="SSM_I_range_correction_present">
+        <cd:Integer>
+          <cd:Description>0: no correction, 1: correction present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Radio_Sonde_correction_present">
+        <cd:Integer>
+          <cd:Description>0: no correction, 1: correction present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Liquid_water_correction_present">
+        <cd:Integer>
+          <cd:Description>0: no correction, 1: correction present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="PRARE_present">
+        <cd:Integer>
+          <cd:Description>0: no PRARE data, 1: PRARE data used in ionospheric correction</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Kp_warning_present">
+        <cd:Integer>
+          <cd:Description>0: no Kp warning, 1: Kp warning present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Kp_warning">
+        <cd:Integer>
+          <cd:Description>0: Ionospheric delay correction ok, 1: Iono. delay corr. probably incorrect due to turbulent ionosphere</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Water_Vapour_Discrepancy">
+        <cd:Integer>
+          <cd:Description>0: no discrepancy, 1: discrepancy</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Water_Vapour_possible_feature">
+        <cd:Integer>
+          <cd:Description>0: no feature, 1: feature present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>23</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Terrain_type">
+    <cd:Integer>
+      <cd:Description>Terrain type flag</cd:Description>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Land_sea_flags">
+    <cd:Array>
+      <cd:Description>Land/sea flags</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>Sea=0, land=1</cd:Description>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>1</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Land_sea_flags_padding">
+    <cd:Raw>
+      <cd:Description>Unused bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Coastline_flags">
+    <cd:Array>
+      <cd:Description>Coastline flags</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>Coastline=1, not coastline=0</cd:Description>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>1</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Coastline_flags_padding">
+    <cd:Raw>
+      <cd:Description>Unused bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Possible_sea_ice">
+    <cd:Array>
+      <cd:Description>Possible sea-ice</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>Possible sea ice=1 (Possible sea ice is defined as ocean data, as defined by land/sea which is north of 50 degN or south of 50 degS)</cd:Description>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>1</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Possible_sea_ice_padding">
+    <cd:Raw>
+      <cd:Description>Unused bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Spacecraft_health">
+    <cd:Integer>
+      <cd:Description>Spacecraft health</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spacecraft_C_of_G_offset">
+    <cd:Integer>
+      <cd:Description>Spacecraft C-of-G offset</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Geoid_elevation">
+    <cd:Integer>
+      <cd:Description>Geoid elevation</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Earth_Tide">
+    <cd:Integer>
+      <cd:Description>Earth Tide</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Ocean_Tide">
+    <cd:Integer>
+      <cd:Description>Ocean Tide</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Ocean_Loading_Tide">
+    <cd:Integer>
+      <cd:Description>Ocean Loading Tide</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Data_Record_Number">
+    <cd:Integer>
+      <cd:Description>FD Data Record Number</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_UTC_Time">
+    <cd:Text format="ascii">
+      <cd:Description>FD UTC Time</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>24</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="FD_Latitude">
+    <cd:Integer>
+      <cd:Description>FD Latitude</cd:Description>
+      <cd:Unit>1E-6 degrees_north</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_north</cd:Unit>
+      </cd:Conversion>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Longitude">
+    <cd:Integer>
+      <cd:Description>FD Longitude</cd:Description>
+      <cd:Unit>1E-6 degrees_east</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_east</cd:Unit>
+      </cd:Conversion>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_wind_speed">
+    <cd:Integer>
+      <cd:Description>FD wind speed, U10</cd:Description>
+      <cd:Unit>1E-2 ms-1</cd:Unit>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Windspeed_Std_Dev">
+    <cd:Integer>
+      <cd:Description>FD Windspeed Std. Dev.</cd:Description>
+      <cd:Unit>1E-4 ms-1</cd:Unit>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Significant_Waveheight">
+    <cd:Integer>
+      <cd:Description>FD Significant Waveheight, Hs</cd:Description>
+      <cd:Unit>1E-2 m</cd:Unit>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_SWH_Std_Dev">
+    <cd:Integer>
+      <cd:Description>FD SWH Std. Dev.</cd:Description>
+      <cd:Unit>1E-4 m</cd:Unit>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Altitude">
+    <cd:Integer>
+      <cd:Description>FD Altitude, H</cd:Description>
+      <cd:Unit>1E-2 m</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Altitude_Std_Dev">
+    <cd:Integer>
+      <cd:Description>FD Altitude Std. Dev.</cd:Description>
+      <cd:Unit>1E-4 m</cd:Unit>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Number_of_Blocks_Used_for_Averaging">
+    <cd:Integer>
+      <cd:Description>FD Number of Blocks Used for Averaging</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Product_Confidence_Data">
+    <cd:Integer>
+      <cd:Description>FD Product Confidence Data</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Average_Peakiness">
+    <cd:Integer>
+      <cd:Description>FD Average Peakiness</cd:Description>
+      <cd:Unit>1E-2</cd:Unit>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spares_7">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="FD_Open_Loop_Calibration_Status">
+    <cd:Integer>
+      <cd:Description>FD Open Loop Calibration Status</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Instrument_Mode">
+    <cd:Integer>
+      <cd:Description>FD Instrument Mode</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spares_8">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="FD_Altitude_Correction_ionosphere">
+    <cd:Integer>
+      <cd:Description>FD Altitude Correction - ionosphere</cd:Description>
+      <cd:Unit>1E-3 m</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Altitude_Correction_dry_tropospheric">
+    <cd:Integer>
+      <cd:Description>FD Altitude Correction - dry tropospheric</cd:Description>
+      <cd:Unit>1E-3 m</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Altitude_Correction_wet_tropospheric">
+    <cd:Integer>
+      <cd:Description>FD Altitude Correction - wet tropospheric</cd:Description>
+      <cd:Unit>1E-3 m</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Altitude_Correction_cal_constant">
+    <cd:Integer>
+      <cd:Description>FD Altitude Correction - cal. constant</cd:Description>
+      <cd:Unit>1E-3 m</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Open_Loop_HTL_cal_correction">
+    <cd:Integer>
+      <cd:Description>FD Open Loop HTL - cal. constant</cd:Description>
+      <cd:Unit>1E-3 m</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Open_Loop_AGC_cal_correction">
+    <cd:Integer>
+      <cd:Description>FD Open Loop AGC - cal. constant</cd:Description>
+      <cd:Unit>1E-3 dB</cd:Unit>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FD_Orbit_type">
+    <cd:Text format="ascii">
+      <cd:Description>FD Orbit type corresponding to Source Packet Centre UTC</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Update_Status">
+    <cd:Record>
+      <cd:Field name="Merge_precise_orbit_attitude_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Merge_spacecraft_health_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Improved_range_correction_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Improved_gain_sigma0_correction_alg_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Improved_wet_tropo_range_correction_alg_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Liquid_water_correction_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Geoid_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Tide_correction_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Ionospheric_correction_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Dry_tropospheric_Range_correction_alg_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Wet_tropospheric_Range_correction_alg_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Merge_FD_Products_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Radiosonde_Data_Processing_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="QC_and_compare_values_of_int_water_vap_alg_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_Calibration_Corrections_algorithm_called">
+        <cd:Integer>
+          <cd:Description>0: alg not called, 1: alg called</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare_1">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="Update_spacecraft_health_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_internal_range_corrections_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_external_range_corrections_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_internal_AGC_corrections_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_external_sigma0_corrections_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_bin_gain_corrections_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_geoid_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Update_tide_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Sunspot_number_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Surface_Pressure_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Surface_Air_Temperature_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="GFA_Integrated_Waver_Vapour_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="ALT_FD_Products_data_present">
+        <cd:Integer>
+          <cd:Description>0: data absent, 1: data present</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>1</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Spare_2">
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:NativeType>uint8</cd:NativeType>
+          <cd:BitSize>3</cd:BitSize>
+        </cd:Integer>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Spares_9">
+    <cd:Raw>
+      <cd:Description>Spares</cd:Description>
+      <cd:BitSize>80</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Source_Packet_Centre_UTC">
+    <cd:Record>
+      <cd:Field name="days">
+        <cd:Integer>
+          <cd:Description>No of days MJD (days since 1 Jan 1950)</cd:Description>
+          <cd:Unit>days since 1950-01-01</cd:Unit>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="milliseconds">
+        <cd:Integer>
+          <cd:Description>milliseconds of day</cd:Description>
+          <cd:Unit>1e-3 s</cd:Unit>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="microseconds">
+        <cd:Integer>
+          <cd:Description>microseconds</cd:Description>
+          <cd:Unit>1e-6 s</cd:Unit>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Actual_Number_of_Waveforms">
+    <cd:Integer>
+      <cd:Description>Actual Number of Waveforms in this data record</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Processing_Specific_Details">
+    <cd:Raw>
+      <cd:Description>Processing Specific Details (Facility Specific Including Quality Information)</cd:Description>
+      <cd:BitSize>8 * (int(../Length) - 5136)</cd:BitSize>
+    </cd:Raw>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,732 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="OPR_pass_file_data_record" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="Nb">
+    <cd:Integer>
+      <cd:Description>Measurement number in the pass-file</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="MCD">
+    <cd:Record>
+      <cd:Description>This element is the Measurement Confidence Data, which regroups all the flags related to the 1-Hz altimeter measurement. 1-Hz altimeter quality flags are derived from the quality of 20-Hz ocean elementary  measurements. A 1-Hz altimeter quality flag is set to "bad" if at least one of the corresponding elementary estimates is "bad" (i.e. out-of-range); otherwise it is set to "good". These engineering level flags may be considered as useful information for software validation, but their systematic use for editing data is to consider with care.</cd:Description>
+      <cd:Field name="Valid">
+        <cd:Integer>
+          <cd:Description>Measurement validity (0 = Valid, 1 = Invalid). A 1-Hz measurement is valid if it contains at least one 20-Hz elementary measurement declared "ocean" in the processing; it is invalid otherwise.</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Causes">
+        <cd:Integer>
+          <cd:Description>Cause of invalidity for invalid measurements (1 = Acquisition mode, 2 = Not acquisition mode but over land (measurements over land are provided in OPR as invalid measurements), 3 = Not acquisition mode, not over land, but not "ocean" measurement, 4 = Other operating mode (generally ice tracking mode)</cd:Description>
+          <cd:BitSize>3</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_Raw">
+        <cd:Integer>
+          <cd:Description>Quality of range estimate (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_Tele_Param">
+        <cd:Integer>
+          <cd:Description>Quality of telemetry parameters for range computation (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_Cal_Cor">
+        <cd:Integer>
+          <cd:Description>Quality of internal calibration correction to range (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_SWH">
+        <cd:Integer>
+          <cd:Description>Quality of significant wave height estimate (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_Sigma0">
+        <cd:Integer>
+          <cd:Description>Quality of backscatter coefficient estimate (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_Tele_Sigma0">
+        <cd:Integer>
+          <cd:Description>Quality of telemetry parameters for backscatter coefficient computation (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_Sigma0_Cal_Cor">
+        <cd:Integer>
+          <cd:Description>Quality of internal calibration correction to backscatter coefficient (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Qua_Deriv">
+        <cd:Integer>
+          <cd:Description>Quality of range derivative estimate (0 = Good , 1 = Bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Typ_Alt_Cal_Cor">
+        <cd:Integer>
+          <cd:Description>Type of internal calibration for range correction (0 = Single Point Target Response, 1 = Invalid)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Typ_Sigma0_Cal_Cor">
+        <cd:Integer>
+          <cd:Description>Type of internal calibration for backscatter coefficient correction (0 = Single Point Target Response, 1 = Invalid)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Typ_Ocean_T">
+        <cd:Integer>
+          <cd:Description>Type of ocean tracking (0 = Nominal, 1 = Preset)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Sig_Wind_Sp">
+        <cd:Integer>
+          <cd:Description>Backscatter coefficient value for wind speed computation (0 = Nominal, 1 = Out-of-range)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Corr_Tide">
+        <cd:Integer>
+          <cd:Description>Presence / Absence of tide corrections (0 = Presence, 1 = Absence)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Sim_Radio">
+        <cd:Integer>
+          <cd:Description>Presence / Absence of a simultaneous radiometer data (0 = Presence, 1 = Absence)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Corr_TB_23">
+        <cd:Integer>
+          <cd:Description>23.8 GHz brightness temperature value (TB_23) for altimetric correction (0 = Nominal, 1 = Out-of-range)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Corr_TB_36">
+        <cd:Integer>
+          <cd:Description>36.5 GHz brightness temperature value (TB_36) for altimetric correction (0 = Nominal, 1 = Out-of-range)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="OL_Flag">
+        <cd:Integer>
+          <cd:Description>Ocean / Land flag for the radiometer (0 = ocean, 1 = land)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Corr_Tropos">
+        <cd:Integer>
+          <cd:Description>Presence / Absence of meteorological wet tropospheric correction (0 = Presence, 1 = Absence)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="MSS_DPAF">
+        <cd:Integer>
+          <cd:Description>Presence / Absence of DPAF mean sea surface (0 = Presence, 1 = Absence (the four MSS nearby grid points over land))</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Manoeuvre">
+        <cd:Integer>
+          <cd:Description>Orbit quality - manoeuvre (0 = Nominal, 1 = Manoeuvre). Set to 1 when the orbit quality is affected by a satellite manoeuvre. The corresponding orbit altitude H_Sat is computed, but is wrong.</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="MSS_OSU">
+        <cd:Integer>
+          <cd:Description>Presence / Absence of OSU mean sea surface (0 = Presence, 1 = Absence (the four MSS nearby grid points over land))</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Inv_Rad_Orb">
+        <cd:Integer>
+          <cd:Description>Cause of invalidity of radial orbit correction (1 = radial orbit correction exceeds 60 cm, 2 = altimeter data on land, 3 = no OPR1 altimeter data available)</cd:Description>
+          <cd:BitSize>2</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="Unused">
+        <cd:Raw>
+          <cd:Description>Spare</cd:Description>
+          <cd:BitSize>5</cd:BitSize>
+        </cd:Raw>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="Tim_1">
+    <cd:Integer>
+      <cd:Description>time stamp 1 (UTC time, in seconds, elapsed between the reference epoch (January 01, 1990 0 h.) and the time of the 1-Hz altimeter measurement, corresponding to the centre of the footprint).</cd:Description>
+      <cd:Unit>s since 1990-01-01</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Tim_2">
+    <cd:Integer>
+      <cd:Description>time stamp 2 (number of microseconds elapsed since the rounded second given in tim_1).</cd:Description>
+      <cd:Unit>1e-6 s</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Lat">
+    <cd:Integer>
+      <cd:Description>latitude</cd:Description>
+      <cd:Unit>1e-6 degrees_north</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_north</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Lon">
+    <cd:Integer>
+      <cd:Description>longitude</cd:Description>
+      <cd:Unit>1e-6 degrees_east</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_east</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Nval">
+    <cd:Integer>
+      <cd:Description>number of averaged 20-Hz measurements</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Alt_Raw">
+    <cd:Integer>
+      <cd:Description>Range: raw value</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Std_H_Alt">
+    <cd:Integer>
+      <cd:Description>Standard deviation on range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Alt_SME">
+    <cd:Array>
+      <cd:Description>Difference of the i-th 10-Hz range from H_Alt_Raw (i=1,10)</cd:Description>
+      <cd:Dimension>10</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1e-3 m</cd:Unit>
+        <cd:Conversion numerator="1.000000" denominator="1000.000000">
+          <cd:Unit>m</cd:Unit>
+        </cd:Conversion>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>int16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="Tim_SME">
+    <cd:Array>
+      <cd:Description>Difference of the i-th 10-Hz time from Tim_1, Tim_2</cd:Description>
+      <cd:Dimension>10</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1e-4 s</cd:Unit>
+        <cd:Conversion numerator="1.000000" denominator="10000.000000">
+          <cd:Unit>s</cd:Unit>
+        </cd:Conversion>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>int16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="H_Alt">
+    <cd:Integer>
+      <cd:Description>Range corrected fro instrumental effects</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Alt_LUT_Cor">
+    <cd:Integer>
+      <cd:Description>Look-up table correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Alt_Dop_Cor">
+    <cd:Integer>
+      <cd:Description>Doppler correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Alt_Cal_Cor_1">
+    <cd:Integer>
+      <cd:Description>Internal calibration correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Alt_Cal_Cor_2">
+    <cd:Integer>
+      <cd:Description>Initial setting for internal calibration correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Range_Deriv">
+    <cd:Integer>
+      <cd:Description>Range first derivative</cd:Description>
+      <cd:Unit>1e-2 m/s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m/s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Dry_Cor">
+    <cd:Integer>
+      <cd:Description>Dry tropospheric correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wet_Cor">
+    <cd:Integer>
+      <cd:Description>Meteorological wet tropospheric correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Pres_Err">
+    <cd:Integer>
+      <cd:Description>Pressure field error</cd:Description>
+      <cd:Unit>1e2 Pa</cd:Unit>
+      <cd:Conversion numerator="100.000000" denominator="1.000000">
+        <cd:Unit>Pa</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wet_H_Rad">
+    <cd:Integer>
+      <cd:Description>Radiometer wet tropospheric correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Iono_Cor">
+    <cd:Integer>
+      <cd:Description>Ionospheric correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="SSB_Cor">
+    <cd:Integer>
+      <cd:Description>Sea state bias correction to range</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Eot">
+    <cd:Integer>
+      <cd:Description>Elastic ocean tide</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Lt">
+    <cd:Integer>
+      <cd:Description>Tidal loading effect</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Set">
+    <cd:Integer>
+      <cd:Description>Solid earth tide</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Geo">
+    <cd:Integer>
+      <cd:Description>Geoid height</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_MSS_DPAF">
+    <cd:Integer>
+      <cd:Description>Mean sea surface height</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_Sat">
+    <cd:Integer>
+      <cd:Description>Altitude above the reference ellipsoid</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Orb_Err">
+    <cd:Integer>
+      <cd:Description>Orbit error</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="SWH_Raw">
+    <cd:Integer>
+      <cd:Description>Significant wave height - raw value</cd:Description>
+      <cd:Unit>1e-2 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Std_SWH">
+    <cd:Integer>
+      <cd:Description>Standard deviation on significant wave height</cd:Description>
+      <cd:Unit>1e-2 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="SWH">
+    <cd:Integer>
+      <cd:Description>Significant wave height corrected for instrumental effects</cd:Description>
+      <cd:Unit>1e-2 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="SWH_Lut_Cor">
+    <cd:Integer>
+      <cd:Description>Look-up table correction to significant wave height</cd:Description>
+      <cd:Unit>1e-2 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_Raw">
+    <cd:Integer>
+      <cd:Description>Backscatter coefficient - raw value</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Std_Sigma0">
+    <cd:Integer>
+      <cd:Description>Standard deviation on backscatter coefficient</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0">
+    <cd:Integer>
+      <cd:Description>Backscatter coefficient corrected for instrumental effects</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_LUT_Cor">
+    <cd:Integer>
+      <cd:Description>Look-up table correction to backscatter coefficient</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_Cal_Cor">
+    <cd:Integer>
+      <cd:Description>Internal calibration correction to backscatter coefficient</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sigma0_LW">
+    <cd:Integer>
+      <cd:Description>Sigma0 corrected for cloud liquid water path attenuation</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wind_Sp">
+    <cd:Integer>
+      <cd:Description>Wind speed</cd:Description>
+      <cd:Unit>1e-2 m/s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m/s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Wind_Sp_LW">
+    <cd:Integer>
+      <cd:Description>Wind speed corrected for cloud liquid water path attenuation</cd:Description>
+      <cd:Unit>1e-2 m/s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>m/s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="TB_23">
+    <cd:Integer>
+      <cd:Description>23.8 GHz brightness temperature</cd:Description>
+      <cd:Unit>1e-1 K</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="10.000000">
+        <cd:Unit>K</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="TB_36">
+    <cd:Integer>
+      <cd:Description>36.5 GHz brightness temperature</cd:Description>
+      <cd:Unit>1e-1 K</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="10.000000">
+        <cd:Unit>K</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="WV_Cont">
+    <cd:Integer>
+      <cd:Description>Water vapour content</cd:Description>
+      <cd:Unit>1e-2 g/cm2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>g/cm2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="WV_Cont_WS">
+    <cd:Integer>
+      <cd:Description>Precise water vapour content (wind speed included)</cd:Description>
+      <cd:Unit>1e-2 g/cm2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>g/cm2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="LW_Cont">
+    <cd:Integer>
+      <cd:Description>Liquid water content</cd:Description>
+      <cd:Unit>1e-2 kg/cm2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>kg/cm2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="LW_Cont_WS">
+    <cd:Integer>
+      <cd:Description>Precise liquid water content (wind speed included)</cd:Description>
+      <cd:Unit>1e-2 kg/cm2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>kg/cm2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="H_MSS_OSU">
+    <cd:Integer>
+      <cd:Description>OSU Mean sea surface height</cd:Description>
+      <cd:Unit>1e-3 m</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000">
+        <cd:Unit>m</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Square_Off_Nad">
+    <cd:Integer>
+      <cd:Description>Waveform-derived square of the off-nadir angle (1-Hz estimate)</cd:Description>
+      <cd:Unit>1e-6 degrees2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Square_Off_Nad_Smoothed">
+    <cd:Integer>
+      <cd:Description>Waveform-derived square of the off-nadir angle (smoothed estimate)</cd:Description>
+      <cd:Unit>1e-6 degrees2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Spare">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>

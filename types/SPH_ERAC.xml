@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SPH_ERAC" last-modified="2010-03-16" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="pf_data">
+    <cd:Array>
+      <cd:Description>PF data. Identical to the first 256 bytes of the source data field of the general IDHT header source packet</cd:Description>
+      <cd:Dimension>256</cd:Dimension>
+      <cd:Integer>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>8</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="eph_id">
+    <cd:Integer>
+      <cd:Description>Ephemeris ID</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="eph_data">
+    <cd:Array>
+      <cd:Description>Ephemeris data (sub-commutated)</cd:Description>
+      <cd:Dimension>24</cd:Dimension>
+      <cd:Integer>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>8</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

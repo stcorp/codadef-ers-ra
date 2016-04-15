@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="ERAC_v0" format="binary" last-modified="2010-04-21" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <cd:Array>
+    <cd:Dimension>filesize()/3594</cd:Dimension>
+    <cd:Record format="binary">
+      <cd:Field name="mph">
+        <cd:NamedType id="MPH"/>
+      </cd:Field>
+      <cd:Field name="sph">
+        <cd:NamedType id="SPH_ERAC"/>
+      </cd:Field>
+      <cd:Field name="dsr">
+        <cd:NamedType id="DSR_ERAC"/>
+      </cd:Field>
+      <ct:NamedTest id="ProductTypeIsErac" path="mph/prod_type" />
+      <ct:NamedTest id="SpacecraftIsErs2" path="mph/sc_id" />
+      <ct:NamedTest id="SphSizeEracValid" path="mph/sph_size" />
+      <ct:NamedTest id="NumDsrEracValid" path="mph/no_of_dsrs" />
+      <ct:NamedTest id="DsrSizeEracValid" path="mph/dsr_size" />
+    </cd:Record>
+  </cd:Array>
+</cd:ProductDefinition>

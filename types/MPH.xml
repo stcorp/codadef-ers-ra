@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="MPH" last-modified="2010-04-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <cd:Field name="prod_id">
+    <cd:Record>
+      <cd:Field name="or_log_sch">
+        <cd:Text format="ascii">
+          <cd:Description>Originator of logical schedule (I = MMCC/EECF, immediate command; M = MMC/EECF, logical schedule; J = local operator, immediate command; K = local operator, logical schedule)</cd:Description>
+          <cd:ByteSize>1</cd:ByteSize>
+          <cd:NativeType>string</cd:NativeType>
+        </cd:Text>
+        <ct:NamedTest id="OriginatorValid" />
+      </cd:Field>
+      <cd:Field name="ct_log_sch">
+        <cd:Integer>
+          <cd:Description>Sequential counter of logical schedule</cd:Description>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:LittleEndian/>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="id_sch_off">
+        <cd:Integer>
+          <cd:Description>Unique identification or schedule offset</cd:Description>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:LittleEndian/>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="spare_1">
+        <cd:Raw>
+          <cd:BitSize>32</cd:BitSize>
+        </cd:Raw>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="seq_prod_no">
+        <cd:Integer>
+          <cd:Description>Sequation number of currently generated product</cd:Description>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:LittleEndian/>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="prod_type">
+    <cd:Integer>
+      <cd:Description>Type of product (see ER-IS-EPO-GS-0201 Table 3)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sc_id">
+    <cd:Integer>
+      <cd:Description>Spacecraft (1 = ERS-1; 2 = ERS-2)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beg_prod_utc">
+    <cd:Time format="ascii" timeformat="ascii_gome_datetime">
+      <cd:Description>UTC Time of subsatellite point at beginning of product</cd:Description>
+      <cd:Mapping string="                        " value="nan"/>
+    </cd:Time>
+    <ct:NamedTest id="BeginningOfProductUtcValid" />
+  </cd:Field>
+  <cd:Field name="station_id">
+    <cd:Integer>
+      <cd:Description>Station ID where data was processed (1 = KS; 2 = FS; 3 = GS; 4 = MS; 5 = ES; 6 = PS; 7 = WF; 8 = MM; 9 = TF; 10 = MI; 11 = BE; 12 = HL; 13 = SG; 14 = CM; 15 = JO)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <ct:NamedTest id="ProcessingStationValid" />
+  </cd:Field>
+  <cd:Field name="pcd">
+    <cd:Integer>
+      <cd:Description>Product Confidence Data</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <ct:NamedTest id="PcdSummaryFlag" />
+  </cd:Field>
+  <cd:Field name="gen_mph_utc">
+    <cd:Time format="ascii" timeformat="ascii_gome_datetime">
+      <cd:Description>UTC time when MPH was generated</cd:Description>
+      <cd:Mapping string="                        " value="nan"/>
+    </cd:Time>
+    <ct:NamedTest id="GenerationTimeValid" />
+  </cd:Field>
+  <cd:Field name="sph_size">
+    <cd:Integer>
+      <cd:Description>Size of specific product header in bytes</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="no_of_dsrs">
+    <cd:Integer>
+      <cd:Description>Number of product data set records</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="dsr_size">
+    <cd:Integer>
+      <cd:Description>Size of each product data set record in bytes</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="prod_gen_sys">
+    <cd:Integer>
+      <cd:Description>Subsystem that generated the product (0 = SARFDP1; 1 = SARFDP2; 2 = LRDPF; 3 = VMP; 4 = LRDTF)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <ct:NamedTest id="SubsystemValid" />
+  </cd:Field>
+  <cd:Field name="obrc_flag">
+    <cd:Integer>
+      <cd:Description>OBRC flag (used for SAR products only; 0 = not used; 1 = OGRC data; 2 = OBRC data)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <ct:NamedTest id="ObrcFlagValid" />
+  </cd:Field>
+  <cd:Field name="ref_utc">
+    <cd:Time format="ascii" timeformat="ascii_gome_datetime">
+      <cd:Description>UTC reference time</cd:Description>
+      <cd:Mapping string="                        " value="nan"/>
+    </cd:Time>
+    <ct:NamedTest id="RefUtcValid" />
+  </cd:Field>
+  <cd:Field name="ref_bin_tim">
+    <cd:Integer>
+      <cd:Description>Reference binary time of satellite clock</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="clock_step">
+    <cd:Integer>
+      <cd:Description>Step length of satellite clock</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>ns</cd:Unit>
+      <cd:LittleEndian/>
+    </cd:Integer>
+    <ct:NamedTest id="ClockStepValid" />
+  </cd:Field>
+  <cd:Field name="proc_sw_id">
+    <cd:Array>
+      <cd:Description>Processor software version used to generate product (format as defined by MMCC/EECF)</cd:Description>
+      <cd:Dimension>4</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>int16</cd:NativeType>
+        <cd:LittleEndian/>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="thresh_tid">
+    <cd:Integer>
+      <cd:Description>Threshold table version number</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Raw>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="asc_utc">
+    <cd:Time format="ascii" timeformat="ascii_gome_datetime">
+      <cd:Description>UTC time of ascending node state vector</cd:Description>
+      <cd:Mapping string="                        " value="nan"/>
+    </cd:Time>
+    <ct:NamedTest id="AscUtcValid" path="mph/asc_utc" />
+  </cd:Field>
+  <cd:Field name="asc_rr">
+    <cd:Array>
+      <cd:Description>State vector position</cd:Description>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:Unit>1e-2 m</cd:Unit>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:LittleEndian/>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+   <cd:Field name="asc_rrd">
+    <cd:Array>
+      <cd:Description>State vector velocity</cd:Description>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:Unit>1e-5 m/s</cd:Unit>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:LittleEndian/>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

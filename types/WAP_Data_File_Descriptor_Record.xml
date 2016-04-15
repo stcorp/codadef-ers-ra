@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="WAP_Data_File_Descriptor_Record" last-modified="2010-03-31" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="Record_Sequence_Number">
+    <cd:Integer>
+      <cd:Description>Record Sequence Number</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="File_Code">
+    <cd:Integer>
+      <cd:Description>File Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Record_Code">
+    <cd:Integer>
+      <cd:Description>Record Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Mission_Code">
+    <cd:Integer>
+      <cd:Description>Mission Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Origin_Code">
+    <cd:Integer>
+      <cd:Description>Origin Code (CEOS defn)</cd:Description>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Length">
+    <cd:Integer>
+      <cd:Description>Length of this record (depends on product)</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ASCII_EBCDIC_flag">
+    <cd:Text format="ascii">
+      <cd:Description>ASCII/EBDCDIC flag</cd:Description>
+      <cd:FixedValue>A </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>2</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Reserved_1">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:FixedValue>  </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>2</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Control_Document_Number">
+    <cd:Text format="ascii">
+      <cd:Description>Control Document Number for this Data File Format</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>12</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Control_Document_Revision_Number">
+    <cd:Text format="ascii">
+      <cd:Description>Control Document Revision Number</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>2</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="File_Design_Descriptor_Revision_Letter">
+    <cd:Text format="ascii">
+      <cd:Description>File Design Descriptor Revision Letter</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>2</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Software_Release_Number">
+    <cd:Text format="ascii">
+      <cd:Description>Software Release Number</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>12</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="File_Number">
+    <cd:Integer format="ascii">
+      <cd:Description>File Number</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="File_Name">
+    <cd:Text format="ascii">
+      <cd:Description>File Name (either ERS1.ALT.WAPDTOP or ERS2.ALT.WAPDTOP)</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>16</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Record_Sequence_and_Location_Type_Flag">
+    <cd:Text format="ascii">
+      <cd:Description>Record Sequence and Location Type Flag</cd:Description>
+      <cd:FixedValue>FSEQ</cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Sequence_Number_Location">
+    <cd:Integer format="ascii">
+      <cd:Description>Sequence Number Location</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:ByteSize>8</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Sequence_Number_Field_Length">
+    <cd:Integer format="ascii">
+      <cd:Description>Sequence Number Field Length</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Record_Code_and_Location_Type_Flag">
+    <cd:Text format="ascii">
+      <cd:Description>Record Code and Location Type Flag</cd:Description>
+      <cd:FixedValue>FTYP</cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Record_Code_Location">
+    <cd:Integer format="ascii">
+      <cd:Description>Record Code Location</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:ByteSize>8</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Record_Code_Field_Length">
+    <cd:Integer format="ascii">
+      <cd:Description>Record Code Field Length</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Record_Length_and_Location_Type_Flag">
+    <cd:Text format="ascii">
+      <cd:Description>Record Length and Location Type Flag</cd:Description>
+      <cd:FixedValue>FLGT</cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Record_Length_Location">
+    <cd:Integer format="ascii">
+      <cd:Description>Record Length Location</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:ByteSize>8</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Record_Length_Field_Length">
+    <cd:Integer format="ascii">
+      <cd:Description>Record Length Field Length</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Reserved_2">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>1</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Reserved_3">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>1</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Reserved_4">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>1</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Reserved_5">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>1</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Reserved_6">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved Segment</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>64</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Reserved_7">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved for use by F - PAF</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>180</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="Number_of_ALT_Data_Records">
+    <cd:Integer format="ascii">
+      <cd:Description>Number of ALT Data Records</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>6</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ALT_Data_Record_Length">
+    <cd:Integer format="ascii">
+      <cd:Description>ALT Data Record Length</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>6</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Number_of_Signal_Data_Records">
+    <cd:Integer format="ascii">
+      <cd:Description>Number of Signal Data Records</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>6</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Signal_data_record_length">
+    <cd:Integer format="ascii">
+      <cd:Description>Signal data record length</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>6</cd:ByteSize>
+      <cd:Mapping string="      " value="0"/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Number_of_Records_in_Product">
+    <cd:Integer format="ascii">
+      <cd:Description>Number of Records in Product</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Length_of_Product">
+    <cd:Integer format="ascii">
+      <cd:Description>Length of Product</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:ByteSize>8</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Number_of_Bytes_of_Prefix_Data_per_Record">
+    <cd:Integer format="ascii">
+      <cd:Description>Number of Bytes of Prefix Data per Record</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Number_of_Bytes_of_Data_per_Record">
+    <cd:Integer format="ascii">
+      <cd:Description>Number of Bytes of Data per Record</cd:Description>
+      <cd:NativeType>uint32</cd:NativeType>
+      <cd:ByteSize>8</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Number_of_Bytes_of_Suffix_Data_per_Record">
+    <cd:Integer format="ascii">
+      <cd:Description>Number of Bytes of Suffix Data per Record</cd:Description>
+      <cd:NativeType>uint16</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="Prefix_Suffix_Repeat_Flag">
+    <cd:Text format="ascii">
+      <cd:Description>Prefix/Suffix Repeat Flag</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>4</cd:ByteSize>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="Reserved_8">
+    <cd:Text format="ascii">
+      <cd:Description>Reserved</cd:Description>
+      <cd:NativeType>string</cd:NativeType>
+      <cd:ByteSize>int(../Length) - 416</cd:ByteSize>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>

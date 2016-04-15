@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="WAP_v0" format="binary" last-modified="2010-03-31" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="descriptor">
+      <cd:NamedType id="WAP_Data_File_Descriptor_Record"/>
+    </cd:Field>
+    <cd:Field name="data">
+      <cd:Array>
+        <cd:Dimension><![CDATA[$num_data_records]]></cd:Dimension>
+        <cd:NamedType id="WAP_Processed_Data_Record"/>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+  <cd:ProductVariable name="num_data_records">
+    <cd:Init><![CDATA[$num_data_records = int(/descriptor/Number_of_ALT_Data_Records)]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>
